@@ -10,6 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    private long startTime = System.currentTimeMillis();
+    private GreenfootSound soundFile = new GreenfootSound("The Num Num Num Song.mp3");
     private final static int IMAGE_COUNT = 7;
     private static GreenfootImage[] images = new GreenfootImage[IMAGE_COUNT];
     
@@ -31,9 +33,21 @@ public class MyWorld extends World
             images[i] = new GreenfootImage( "frame_" + i + "_delay-0.1s.gif" );
         }
         
+        
         setBackground( images[0] );
     }
     
+    public void started()
+    {
+        startTime = System.currentTimeMillis();
+        
+        soundFile.playLoop();
+    }
+    
+    public void stopped()
+    {
+        soundFile.stop();
+    }
     
     public void act()
     {
