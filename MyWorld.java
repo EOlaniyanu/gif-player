@@ -37,6 +37,12 @@ public class MyWorld extends World
         setBackground( images[0] );
     }
     
+    /**
+     * started starts playing the audio for the gif
+     * 
+     * @param There are no parameters 
+     * @return Nothing is returned
+     */
     public void started()
     {
         startTime = System.currentTimeMillis();
@@ -44,6 +50,12 @@ public class MyWorld extends World
         soundFile.playLoop();
     }
     
+    /**
+     * stopped stops playing the audio when the program is paused 
+     * 
+     * @param There are no parameters 
+     * @return Nothing is returned
+     */
     public void stopped()
     {
         soundFile.stop();
@@ -67,7 +79,7 @@ public class MyWorld extends World
     /**
      * setSlowness sets how slow the gif is going to play
      * 
-     * @param There is an int parameter 
+     * @param There is an int parameter that controls the level of slowness of the gif 
      * @return Nothing is returned
      */
     public void setSlowness(int h)
